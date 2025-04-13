@@ -11,6 +11,8 @@ if(USE_BOOST_KARMA)
 endif(USE_BOOST_KARMA)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
+
+set(LIBRARY_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 add_library(bprinter STATIC
   include/bprinter/table_printer.h
   include/bprinter/impl/table_printer.tpp.h
