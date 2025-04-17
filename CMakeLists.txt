@@ -14,8 +14,8 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 
 set(LIBRARY_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 add_library(bprinter STATIC
-  include/bprinter/table_printer.h
-  include/bprinter/impl/table_printer.tpp.h
+  include/table_printer.h
+  include/impl/table_printer.tpp.h
   src/table_printer.cpp
 )
 
@@ -28,7 +28,7 @@ set(BP_CONFIG_IN_FILENAME "config.cmake.in")
 set(BP_CONFIG_FILENAME "${BP_PACKAGE_NAME}Config.cmake")
 set(BP_CONFIGVERSION_FILENAME "${BP_PACKAGE_NAME}ConfigVersion.cmake")
 set(BP_CONFIG_DESTINATION "cmake")
-set(BP_INCLUDE_INSTALL_DIR "include/bprinter")
+set(BP_INCLUDE_INSTALL_DIR "include")
 set(BP_LIB_INSTALL_DIR lib)
 
 include(CMakePackageConfigHelpers)
@@ -46,11 +46,11 @@ INSTALL(TARGETS bprinter
 	DESTINATION ${BP_LIB_INSTALL_DIR} 
 	PERMISSIONS OWNER_READ GROUP_READ WORLD_READ)
 
-INSTALL(FILES include/bprinter/table_printer.h 
+INSTALL(FILES include/table_printer.h 
 	DESTINATION ${BP_INCLUDE_INSTALL_DIR} 
 	PERMISSIONS OWNER_READ GROUP_READ WORLD_READ)
 
-INSTALL(FILES include/bprinter/impl/table_printer.tpp.h 
+INSTALL(FILES include/impl/table_printer.tpp.h 
 	DESTINATION ${BP_INCLUDE_INSTALL_DIR}/impl 
 	PERMISSIONS OWNER_READ GROUP_READ WORLD_READ)
 
